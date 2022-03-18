@@ -37,18 +37,41 @@ section {
   align-items: center;
 }
 
-.primary__greeting {
+.center__primary {
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.primary__clock {
+.primary__greeting-wrapper {
+  display: flex;
+  align-items: baseline; /* REVIEW */
+  margin-bottom: 3rem; /* REVIEW */
+}
+
+.username {
+  border: none;
+  border-bottom: 1px solid black;
+  text-align: center;
+  font-size: 1.6rem;
+}
+.username.full {
+  border-bottom: none;
+}
+.username.full:hover {
+  border-bottom: 1px solid black;
+}
+
+.primary__clock-wrapper {
   position: relative;
+  width: 100%;
+  text-align: center; /* REVIEW */
 }
 
 .timeConvertBtn {
-  position: absolute;
-  top: 0;
-  right: 0;
+  position: relative;
+  top: -0.5rem;
+  right: -0.5rem;
 }
 
 /* section right */
@@ -58,10 +81,14 @@ section {
   flex-direction: column;
 }
 
-.right__todos {
-  flex: 1 0 var(--todos-container-height);
+.todos-wrapper {
+  flex: 1 0 var(--todos-wrapper-height);
 }
 
-.right__dog-house {
-  flex: 1 0 var(--dog-house-container-height);
+.dog-house-wrapper {
+  flex: 1 0 var(--dog-house-wrapper-height);
+}
+
+.hidden {
+  display: none;
 }

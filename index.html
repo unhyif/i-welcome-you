@@ -6,23 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>I welcome you!</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
+    <script src="src/greeting.js" defer></script>
+    <script src="src/clock.js" defer></script>
   </head>
   <body>
     <header>
-      <div class="header__weather"></div>
+      <div class="weather"></div>
       <button class="changeBgBtn"><i class="fa-solid fa-image"></i></button>
     </header>
     <main>
       <section id="left"></section>
       <section id="center">
-        <div class="center_primary">
-          <h1 class="primary__greeting">
-            <form><input type="text" required /></form>
-            <p></p>
+        <div class="center__primary">
+          <p class="primary__temp-greeting">안녕하세요</p>
+          <h1 class="primary__greeting-wrapper">
+            <form class="username-form">
+              <input
+                type="text"
+                class="username"
+                placeholder="이름을 알려주세요!"
+                required
+              />
+            </form>
+            <p class="greeting hidden"></p>
           </h1>
-          <h2 class="primary__clock">
-            <span></span
+          <h2 class="primary__clock-wrapper">
+            <span class="clock"></span
             ><button class="timeConvertBtn">
               <i class="fa-solid fa-arrows-rotate"></i>
             </button>
@@ -30,10 +39,11 @@
         </div>
       </section>
       <section id="right">
-        <div class="right__todos"></div>
-        <div class="right__dog-house"></div>
+        <div class="todos-wrapper"></div>
+        <div class="dog-house-wrapper"></div>
       </section>
     </main>
+    <button class="delete">삭제</button>
     <script
       src="https://kit.fontawesome.com/6fb24bf724.js"
       crossorigin="anonymous"
