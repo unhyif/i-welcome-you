@@ -1,0 +1,67 @@
+@import "css/reset.css";
+@import "css/variables.css";
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  flex-grow: 1; /* section's height also grows like align-items: stretch */
+}
+
+section {
+  border: 1px solid black;
+}
+
+/* section center */
+
+#center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.primary__greeting {
+  display: flex;
+}
+
+.primary__clock {
+  position: relative;
+}
+
+.timeConvertBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* section right */
+
+#right {
+  display: flex;
+  flex-direction: column;
+}
+
+.right__todos {
+  flex: 1 0 var(--todos-container-height);
+}
+
+.right__dog-house {
+  flex: 1 0 var(--dog-house-container-height);
+}
