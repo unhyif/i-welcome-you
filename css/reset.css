@@ -133,6 +133,7 @@ button {
   background: inherit;
   border: none;
   cursor: pointer;
+  height: fit-content;
 }
 
 a {

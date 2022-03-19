@@ -6,14 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>I welcome you 🙌</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="src/secrets.js" defer></script>
+    <script src="src/constants.js" defer></script>
+
     <script src="src/greeting.js" defer></script>
     <script src="src/clock.js" defer></script>
+    <script src="src/weather.js" defer></script>
     <script src="src/setting.js" defer></script>
   </head>
   <body>
     <header>
-      <div class="weather"></div>
-      <button class="changeBgBtn"><i class="fa-solid fa-gear"></i></button>
+      <div class="weather">
+        <span class="weather__location"></span
+        ><span class="weather__detail"></span>
+      </div>
+      <button class="settingBtn"><i class="fa-solid fa-gear"></i></button>
     </header>
     <main>
       <section id="left"></section>

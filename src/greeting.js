@@ -1,21 +1,9 @@
 "use strict";
 
-// Variables
-
-const KEYS = {
-  username: "username",
-  clock: "clock",
-};
-const CLASSES = {
-  hidden: "hidden",
-};
-
 const usernameForm = document.querySelector(".username-form"); // REVIEW: Scope
 const usernameInput = document.querySelector(".username");
 
-// Functions
-
-// - Username related functions -
+// Username related functions
 
 /**
  * usernameInput의 width를 동적으로 설정하는 함수
@@ -84,7 +72,7 @@ function displayUsername(username) {
   usernameInput.value = username;
 }
 
-// - Greeting related functions -
+// Greeting related functions
 
 /**
  * Display greeting next to username.
@@ -127,7 +115,7 @@ function getTimelyGreeting() {
     : "오늘도 수고했어요 :)"; // REVIEW: return is necessary & switch isn't suitable here
 }
 
-// - Set up functions -
+// Set up functions
 
 function setUsernameEventListeners() {
   usernameInput.addEventListener("focus", setUsernameInputWidth);
