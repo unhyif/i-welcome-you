@@ -30,10 +30,6 @@ main {
   flex-grow: 1; /* section's height also grows like align-items: stretch */
 }
 
-section {
-  border: 0.1rem solid black;
-}
-
 /* section center */
 
 #center {
@@ -61,10 +57,8 @@ section {
 
 /* .username[type="text" i] REVIEW */
 
-.username:hover {
-  border-bottom: var(--black-underline);
-}
-
+section,
+.username:hover,
 .username--underline {
   border-bottom: var(--black-underline);
 }

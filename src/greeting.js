@@ -95,6 +95,7 @@ function onUsernameFormSubmit(e) {
   const username = usernameInput.value;
   localStorage.setItem(KEYS.username, username);
 
+  document.title = `I welcome ${username} 🙌`;
   usernameInput.placeholder = "이름 입력 후 Enter! ⌨️";
   usernameInput.blur(); // REVIEW: deactivate autofocus
   displayUsername(username);
@@ -167,6 +168,7 @@ function greetingInit() {
 
   // If username exists in localStorage
   if (username) {
+    document.title = `I welcome ${username} 🙌`;
     displayUsername(username);
     displayGreeting();
   }
