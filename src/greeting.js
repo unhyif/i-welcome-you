@@ -7,43 +7,14 @@ const KEYS = {
 };
 const CLASSES = {
   hidden: "hidden",
-  usernameUnderline: "username--underline",
-  usernamePadding: "username--padding",
 };
 
-const username = localStorage.getItem(KEYS.username);
-const usernameForm = document.querySelector(".username-form");
+const usernameForm = document.querySelector(".username-form"); // REVIEW: Scope
 const usernameInput = document.querySelector(".username");
 
 // Functions
 
 // - Username related functions -
-
-/**
- * When usernameInput is focused, add underline & side padding.
- * And then increase its width.
- * @param {Event} e
- */
-function onUsernameInputFocus(e) {
-  usernameInput.classList.add(
-    CLASSES.usernameUnderline,
-    CLASSES.usernamePadding
-  );
-  setUsernameInputWidth(e);
-}
-
-/**
- * When usernameInput is focused out, remove underline & side padding.
- * And then reduce its width.
- * @param {Event} e
- */
-function onUsernameInputFocusout(e) {
-  usernameInput.classList.remove(
-    CLASSES.usernameUnderline,
-    CLASSES.usernamePadding
-  );
-  setUsernameInputWidth(e);
-}
 
 /**
  * usernameInput의 width를 동적으로 설정하는 함수
@@ -96,7 +67,7 @@ function onUsernameFormSubmit(e) {
   localStorage.setItem(KEYS.username, username);
 
   document.title = `I welcome ${username} 🙌`;
-  usernameInput.placeholder = "이름 입력 후 Enter! ⌨️";
+  usernameInput.placeholder = "이름 입력 후 Enter!";
   usernameInput.blur(); // REVIEW: deactivate autofocus
   displayUsername(username);
   displayGreeting();
@@ -107,6 +78,7 @@ function onUsernameFormSubmit(e) {
  * @param {string} username
  */
 function displayUsername(username) {
+  document.title = `I welcome ${username} 🙌`;
   setUsernameInputWidth(null, username);
   usernameInput.value = username;
 }
@@ -157,18 +129,18 @@ function getTimelyGreeting() {
 // - Set up functions -
 
 function setUsernameEventListeners() {
-  usernameInput.addEventListener("focus", onUsernameInputFocus);
-  usernameInput.addEventListener("focusout", onUsernameInputFocusout);
+  usernameInput.addEventListener("focus", setUsernameInputWidth);
+  usernameInput.addEventListener("focusout", setUsernameInputWidth);
   usernameInput.addEventListener("input", setUsernameInputWidth); // REVIEW: input/change/keyboard events
   usernameForm.addEventListener("submit", onUsernameFormSubmit);
 }
 
 function greetingInit() {
+  const username = localStorage.getItem(KEYS.username);
   setUsernameEventListeners();
 
   // If username exists in localStorage
   if (username) {
-    document.title = `I welcome ${username} 🙌`;
     displayUsername(username);
     displayGreeting();
   }

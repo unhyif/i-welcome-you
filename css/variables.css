@@ -1,7 +1,7 @@
 :root {
   /* Size */
   --base-font-size: 1.6rem;
-  --username-padding: 1rem;
+  --username-padding: 2rem;
 
   --todos-wrapper-height: 70%;
   --dog-house-wrapper-height: 30%;

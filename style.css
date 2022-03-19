@@ -59,11 +59,11 @@ main {
 
 section,
 .username:hover,
-.username--underline {
+.username:focus {
   border-bottom: var(--black-underline);
 }
 
-.username--padding {
+.username:focus {
   padding-left: var(--username-padding);
   padding-right: var(--username-padding);
 }
