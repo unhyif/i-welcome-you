@@ -4,6 +4,7 @@
 
 const KEYS = {
   username: "username",
+  clock: "clock",
 };
 const CLASSES = {
   hidden: "hidden",
@@ -161,7 +162,3 @@ function greetingInit() {
 // Main
 
 greetingInit();
-
-document.querySelector(".delete").addEventListener("click", (e) => {
-  localStorage.clear();
-});
