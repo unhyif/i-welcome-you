@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
   outline: none;
 }
 
@@ -84,8 +86,6 @@ time,
 mark,
 audio,
 video {
-  margin: 0;
-  padding: 0;
   border: 0;
   font-size: 100%;
   font: inherit;
@@ -128,12 +128,10 @@ table {
 }
 
 button {
+  font: inherit;
   color: inherit;
-  font-size: inherit;
   background: inherit;
   border: none;
-  border-radius: 0;
-  padding: 0;
   cursor: pointer;
 }
 
@@ -142,28 +140,21 @@ a {
   text-decoration: none;
 }
 
-a:visited {
-  text-decoration: none;
-  color: inherit;
-}
-
 input {
+  font: inherit;
+  border: none;
   -webkit-appearance: none; /* Safari and Chrome */
   -moz-appearance: none; /* Firefox */
   appearance: none;
 }
 
-input[type="text" i] {
+/* input[type="text" i] {
   padding: 0;
-}
+} */
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-}
-
-input:focus {
-  outline: none;
 }

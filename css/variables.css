@@ -1,4 +1,10 @@
 :root {
+  /* Size */
+  --base-font-size: 1.6rem;
+  --username-padding: 1rem;
+
   --todos-wrapper-height: 70%;
   --dog-house-wrapper-height: 30%;
+
+  --black-underline: 0.1rem solid black;
 }

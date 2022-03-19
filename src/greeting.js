@@ -1,83 +1,127 @@
 "use strict";
 
-const CONSTANTS = {
-  /* KEY */
+// Variables
+
+const KEYS = {
   username: "username",
-
-  /* CLASS NAME */
-  hidden: "hidden",
-  full: "full",
-
-  /* SIZE */
-  inputFontSize: 1.6,
 };
+const CLASSES = {
+  hidden: "hidden",
+  usernameUnderline: "username--underline",
+  usernamePadding: "username--padding",
+};
+
+const username = localStorage.getItem(KEYS.username);
 const usernameForm = document.querySelector(".username-form");
 const usernameInput = document.querySelector(".username");
 
+// Functions
+
+// - Username related functions -
+
 /**
- * usernameInput의 width를 설정하는 함수
+ * When usernameInput is focused, add underline & side padding.
+ * And then increase its width.
+ * @param {Event} e
+ */
+function onUsernameInputFocus(e) {
+  usernameInput.classList.add(
+    CLASSES.usernameUnderline,
+    CLASSES.usernamePadding
+  );
+  setUsernameInputWidth(e);
+}
+
+/**
+ * When usernameInput is focused out, remove underline & side padding.
+ * And then reduce its width.
+ * @param {Event} e
+ */
+function onUsernameInputFocusout(e) {
+  usernameInput.classList.remove(
+    CLASSES.usernameUnderline,
+    CLASSES.usernamePadding
+  );
+  setUsernameInputWidth(e);
+}
+
+/**
+ * usernameInput의 width를 동적으로 설정하는 함수
  *
- * 1) Event handler로서 실행된 경우: width를 동적으로 설정한다. (Dynamic width)
+ * 1) Event handler로서 실행된 경우:
  * - 입력값 있을 시) 입력값의 length,
- * - 입력값 지워졌을 시) usernameInput의 placeholder의 length를 기반으로 width를 설정한다.
+ * - 입력값 지워졌을 시) usernameInput의 placeholder의 length에 기반하여 width를 설정한다.
  *
- * 2) Else: width를 정적으로 설정한다. (Static width)
+ * 2) Else:
  * - username이 localStorage에 존재 시) username의 length,
- * - 없을 시) usernameInput의 placeholder의 length를 기반으로 width를 설정한다.
+ * - 없을 시) usernameInput의 placeholder의 length에 기반하여 width를 설정한다.
  * @param {Event} e
  * @param {string} username
  */
 function setUsernameInputWidth(e, username) {
+  // width의 기반이 될 text 설정
   const placeholder = usernameInput.placeholder;
-  let value;
+  let text;
 
   if (e) {
-    value = e.target.value ? e.target.value : placeholder;
+    text = e.target.value ? e.target.value : placeholder;
   } else {
-    value = username ? username : placeholder;
+    text = username ? username : placeholder;
   }
-  const valueLength = value.length;
+
+  // width 계산에 고려되는 관련 CSS values // REVIEW
+  const styles = {
+    fontSize: getComputedStyle(usernameInput)["font-size"],
+    fontFamily: getComputedStyle(usernameInput)["font-family"],
+    padding: parseInt(getComputedStyle(usernameInput)["padding-left"]),
+  };
+
+  // width 계산 // REVIEW
+  const context = document.createElement("canvas").getContext("2d");
+  context.font = `${styles.fontSize} ${styles.fontFamily}`;
+  const textWidth = context.measureText(text).width;
 
   usernameInput.style.width =
-    (valueLength + 1) * CONSTANTS.inputFontSize + "rem"; // TODO: Not use fixed font size
+    (textWidth + 2 * (styles.padding ? styles.padding : 0)) * 0.1 + "rem";
 }
 
 /**
- * Save submitted username in localStorage,
- * execute displayUsername & displayGreeting function.
+ * Save submitted username in localStorage, and then display username & greeting.
  * @param {Event} e
  */
 function onUsernameFormSubmit(e) {
   e.preventDefault();
 
   const username = usernameInput.value;
-  localStorage.setItem(CONSTANTS.username, username);
+  localStorage.setItem(KEYS.username, username);
 
+  usernameInput.placeholder = "이름 입력 후 Enter! ⌨️";
   usernameInput.blur(); // REVIEW: deactivate autofocus
   displayUsername(username);
   displayGreeting();
 }
 
 /**
- * Display username on usernameInput.
+ * Display username on usernameInput with dynamically calculated width.
  * @param {string} username
  */
 function displayUsername(username) {
   setUsernameInputWidth(null, username);
   usernameInput.value = username;
-  usernameInput.classList.add(CONSTANTS.full);
 }
+
+// - Greeting related functions -
 
 /**
  * Display greeting next to username.
- * Greeting becomes visible only when the username exists.
+ * Greeting becomes visible only when the username exists in localStorage.
  */
 function displayGreeting() {
   hideTempGreeting();
 
   const greeting = document.querySelector(".greeting");
-  greeting.classList.remove(CONSTANTS.hidden);
   greeting.innerText = `님, ${getRandomGreeting()}`;
+  greeting.classList.remove(CLASSES.hidden);
 }
 
 /**
@@ -86,12 +130,12 @@ function displayGreeting() {
 function hideTempGreeting() {
   document
     .querySelector(".primary__temp-greeting")
-    .classList.add(CONSTANTS.hidden);
+    .classList.add(CLASSES.hidden);
 }
 
 /**
- * Get random greeting depending on randomly generated number.
- * If the number isn't 7 unfortunately, execute getTimelyGreeting.
+ * Get a surprise greeting if 7 is randomly generated.
+ * Otherwise, get a timely greeting instead.
  */
 function getRandomGreeting() {
   return Math.floor(Math.random() * 10) === 7
@@ -100,32 +144,49 @@ function getRandomGreeting() {
 }
 
 /**
- * Get timely greeting which is different in the daytime and nighttime.
+ * Get a timely greeting which is different depending on whether it's in the daytime or nighttime.
  */
 function getTimelyGreeting() {
   const hour = new Date().getHours();
-  console.log(hour);
   return 5 <= hour && hour < 18 // REVIEW: n <= variable <= m doesn't work in JS
     ? "즐거운 하루 보내세요!"
     : "오늘도 수고했어요 :)"; // REVIEW: return is necessary & switch isn't suitable here
 }
 
-// MAIN
+// - Set up functions -
 
-const username = localStorage.getItem(CONSTANTS.username);
-
-// If username exists in localStorage
-if (username) {
-  displayUsername(username);
-  displayGreeting();
-} // If not
-else {
-  setUsernameInputWidth(); // Arguments shouldn't be passed
-  usernameInput.focus(); // REVIEW: activate autofocus
+function setUsernameEventListeners() {
+  usernameInput.addEventListener("focus", onUsernameInputFocus);
+  usernameInput.addEventListener("focusout", onUsernameInputFocusout);
+  usernameInput.addEventListener("input", setUsernameInputWidth); // REVIEW: input/change/keyboard events
+  usernameForm.addEventListener("submit", onUsernameFormSubmit);
 }
 
-usernameInput.addEventListener("input", setUsernameInputWidth); // REVIEW: input/change/keyboard events
-usernameForm.addEventListener("submit", onUsernameFormSubmit);
+function greetingInit() {
+  setUsernameEventListeners();
+
+  // If username exists in localStorage
+  if (username) {
+    displayUsername(username);
+    displayGreeting();
+  }
+
+  // If not
+  else {
+    usernameInput.placeholder = "이름을 알려 주세요!";
+    usernameInput.focus(); // REVIEW: activate autofocus
+
+    /**
+     * Set the width of usernameInput based on placeholder.
+     * Arguments shouldn't be passed.
+     */
+    setUsernameInputWidth();
+  }
+}
+
+// Main
+
+greetingInit();
 
 document.querySelector(".delete").addEventListener("click", (e) => {
   localStorage.clear();

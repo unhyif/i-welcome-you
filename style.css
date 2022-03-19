@@ -1,14 +1,19 @@
 @import "css/reset.css";
 @import "css/variables.css";
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap")/ */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap");
+
+.hidden {
+  display: none;
+}
 
 html {
   font-size: 62.5%;
 }
 
 body {
-  font-family: "Roboto", sans-serif;
-  font-size: 1.6rem;
+  font-family: "Open Sans";
+  font-size: var(--base-font-size);
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -26,7 +31,7 @@ main {
 }
 
 section {
-  border: 1px solid black;
+  border: 0.1rem solid black;
 }
 
 /* section center */
@@ -46,20 +51,27 @@ section {
 .primary__greeting-wrapper {
   display: flex;
   align-items: baseline; /* REVIEW */
-  margin-bottom: 3rem; /* REVIEW */
+  margin-bottom: 5rem; /* REVIEW */
 }
 
 .username {
-  border: none;
-  border-bottom: 1px solid black;
   text-align: center;
-  font-size: 1.6rem;
+  padding: 0 0 0.1rem 0;
 }
-.username.full {
-  border-bottom: none;
+
+/* .username[type="text" i] REVIEW */
+
+.username:hover {
+  border-bottom: var(--black-underline);
 }
-.username.full:hover {
-  border-bottom: 1px solid black;
+
+.username--underline {
+  border-bottom: var(--black-underline);
+}
+
+.username--padding {
+  padding-left: var(--username-padding);
+  padding-right: var(--username-padding);
 }
 
 .primary__clock-wrapper {
@@ -87,8 +99,4 @@ section {
 
 .dog-house-wrapper {
   flex: 1 0 var(--dog-house-wrapper-height);
-}
-
-.hidden {
-  display: none;
 }
