@@ -1,3 +1,5 @@
+// Function
+
 function onGeoResponse(location) {
   ({ latitude: lat, longitude: lon } = location.coords); // REVIEW
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${SECRETS.weather}&units=metric`;
@@ -21,5 +23,7 @@ function displayWeather(json) {
 function onGeoError() {
   alert("현재 위치를 알 수 없어요!");
 }
+
+// Main
 
 navigator.geolocation.getCurrentPosition(onGeoResponse, onGeoError);

@@ -5,14 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>I welcome you 🙌</title>
+
     <link rel="stylesheet" href="style.css" />
     <script src="src/secrets.js" defer></script>
     <script src="src/constants.js" defer></script>
 
+    <script src="src/background.js" defer></script>
     <script src="src/greeting.js" defer></script>
     <script src="src/clock.js" defer></script>
     <script src="src/weather.js" defer></script>
-    <script src="src/setting.js" defer></script>
+    <!-- <script src="src/setting.js" defer></script> -->
   </head>
   <body>
     <header>
@@ -21,9 +23,16 @@
         ><span class="weather__detail"></span>
       </div>
       <button class="settingBtn"><i class="fa-solid fa-gear"></i></button>
+      <ul class="setting">
+        <li class="setting__item">초기화</li>
+        <li class="setting__item">I-welcome-you</li>
+        <li class="setting__item">Who developed this?</li>
+      </ul>
     </header>
+
     <main>
       <section id="left"></section>
+
       <section id="center">
         <div class="center__primary">
           <p class="primary__temp-greeting">안녕하세요</p>
@@ -47,12 +56,13 @@
           </h2>
         </div>
       </section>
+
       <section id="right">
         <div class="todos-wrapper"></div>
         <div class="dog-house-wrapper"></div>
       </section>
     </main>
-    <button class="resetBtn">초기화</button>
+    <!-- <button class="resetBtn">초기화</button> -->
     <script
       src="https://kit.fontawesome.com/6fb24bf724.js"
       crossorigin="anonymous"

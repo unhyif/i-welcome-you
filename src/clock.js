@@ -1,3 +1,5 @@
+// Functions
+
 /**
  * Display current time on the page.
  */
