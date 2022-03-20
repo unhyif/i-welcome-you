@@ -15,13 +15,13 @@ function onTodoFormSubmit(e) {
 
   const newTodo = { id: Date.now(), content: todoInput.value };
   todosArray.push(newTodo);
-  saveTodos(todosArray);
+  updateTodos(todosArray);
 
   todoInput.value = null;
   displayNewTodo(newTodo);
 }
 
-function saveTodos(todosArray) {
+function updateTodos(todosArray) {
   localStorage.setItem(KEYS.todos, JSON.stringify(todosArray));
 }
 
@@ -37,7 +37,7 @@ function createTodoHTML(todo) {
   </li>`;
 }
 
-function renderTodos() {
+function displayAllTodos() {
   const todosHTML = todosArray.map(createTodoHTML).join("");
   todos.innerHTML = todosHTML;
 
@@ -63,10 +63,10 @@ function fadeAndRemoveTodo(todo) {
 
 function deleteTodo(id) {
   todosArray = todosArray.filter((todo) => todo.id !== id);
-  saveTodos(todosArray);
+  updateTodos(todosArray);
 }
 
 // Main
 
-renderTodos();
+displayAllTodos();
 todoForm.addEventListener("submit", onTodoFormSubmit);
