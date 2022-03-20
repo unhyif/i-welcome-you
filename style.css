@@ -1,6 +1,6 @@
 @import "css/reset.css";
 @import "css/variables.css";
-@import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+KR:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+KR:wght@400;500;700&display=swap");
 
 .hidden {
   display: none;
@@ -44,6 +44,7 @@ body {
   background-size: cover;
   background-position: center;
   font-family: "Noto Sans KR";
+
   font-size: var(--base-fontSize);
   color: var(--black);
   overflow-x: hidden; /* REVIEW */
@@ -75,7 +76,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--body-padding) var(--body-padding);
+  padding: var(--body-padding);
 }
 
 .weather {
@@ -85,6 +86,16 @@ header {
   gap: 1rem;
   color: var(--white);
   font-weight: 700;
+}
+
+.weather__location-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pin {
+  font-size: 2rem;
 }
 
 .weather__location {
@@ -128,10 +139,12 @@ header {
 }
 
 .primary__temp-greeting {
+  font-family: "Gowun Dodum", sans-serif;
+  font-weight: bold;
   font-size: var(--tempGreeting-fontSize);
   color: var(--white);
   margin-bottom: 4rem;
-  padding-left: var(--tempGreeting-fontSize);
+  /* padding-left: calc(var(--tempGreeting-fontSize) / 2); */
 }
 
 .hi {
@@ -185,8 +198,8 @@ header {
 
 .primary__clock-wrapper {
   position: relative;
-  /* width: 100%;
-  text-align: center; */
+  width: 100%;
+  text-align: center;
 }
 
 .clock {
@@ -196,9 +209,9 @@ header {
 }
 
 .timeConvertBtn {
-  position: relative;
-  top: -7.5rem;
-  right: -0.5rem;
+  position: absolute; /* REVIEW */
+  /* top: -0.5rem; */
+  right: 18rem;
   color: var(--dark-gray);
   background: var(--half-white);
   transition: opacity 0.5s, background 0.2s; /* REVIEW */
@@ -226,7 +239,6 @@ header {
 
 .right__todos {
   flex: 1 0 var(--todosContainer-height);
-  font-family: "Gowun Dodum", sans-serif;
 }
 
 .todos-wrapper {
@@ -252,7 +264,7 @@ header {
 
 .todosTapBtn {
   padding: 1.5rem 1.4rem 0.7rem 1.25rem;
-  background: var(--white);
+  background: var(--half-bright-white);
 }
 
 .todosTapBtn img {
@@ -272,21 +284,63 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: var(--todosTap-gap);
   background: var(--white);
+  padding-left: var(--todosTap-gap);
+  padding-right: var(--todosTap-gap);
 }
 
-.todo-tap__title {
+.todos-tap__title {
+  font-size: 3rem;
+  font-weight: bold;
+  width: 90%;
+  text-align: center;
+  padding-bottom: var(--todosTap-gap);
+  border-bottom: 0.25rem solid var(--weak-gray);
+}
+
+.todos-tap__todos {
+  width: 32rem;
+  height: 35rem;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   font-size: 2rem;
+  font-weight: 500;
+}
+
+.empty {
+  width: 100%;
+  text-align: center;
+  padding-top: calc(35rem / 2);
 }
 
 .todo {
   display: flex;
   align-items: center;
+  gap: 1.5rem;
+  line-height: 2.5rem;
 }
+
+/* .todo__checkbox {
+  font-size: 5rem;
+} */
 
 .todo__checkbox:checked + label {
   text-decoration-line: line-through;
   /* text-decoration-color: gray; */
+}
+
+.todos-tap__input {
+  font-size: 2rem;
+  border: 0.2rem solid var(--weak-gray);
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+}
+
+.todos-tap__input:hover {
+  background: rgb(255, 248, 230);
 }
 
 /* cat-house */

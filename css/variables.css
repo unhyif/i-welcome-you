@@ -16,12 +16,14 @@
   --half-bright-white: rgba(255, 255, 255, 0.8);
   --dark-gray: rgb(80, 80, 80);
   --light-gray: rgb(160, 160, 160);
+  --weak-gray: rgb(230, 230, 230);
 
   /* Padding */
   --body-padding: 2rem;
   --wrapper-padding: 1.5rem;
   --btn-padding: 1rem;
   --username-padding: 2rem;
+  --todosTap-gap: 2rem;
 
   /* Time */
   --todosTapTime: 0.7s;
@@ -30,4 +32,5 @@
   --black-underline: 0.1rem solid var(--black);
   --white-underline: 0.1rem solid var(--white);
   --gray-underline: 0.1rem solid var(--light-gray);
+  --weak-gray-underline: 0.1rem solid var(--weak-gray);
 }

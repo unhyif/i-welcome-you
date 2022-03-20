@@ -5,8 +5,8 @@ let todosArray = savedTodos ? JSON.parse(savedTodos) : [];
 
 const todos = document.querySelector(".todos-tap__todos"); // REVIEW
 let todoCheckBoxes; // REVIEW
-const todoForm = document.querySelector(".todos-tap__todo-form");
-const todoInput = document.querySelector(".todos-tap__todo-input");
+const todoForm = document.querySelector(".todos-tap__form");
+const todoInput = document.querySelector(".todos-tap__input");
 
 // Functions
 
@@ -26,8 +26,15 @@ function updateTodos(todosArray) {
 }
 
 function renderNewTodo(newTodo) {
+  removeEmptiness();
+
   todos.innerHTML += createTodoHTML(newTodo);
   setEventListenerOnCheckBoxes();
+}
+
+function removeEmptiness() {
+  const empty = todos.querySelector(`.${CLASSES.empty}`);
+  if (empty) empty.remove();
 }
 
 function createTodoHTML(todo) {
@@ -64,8 +71,14 @@ function HideAndShowTodosTap() {
   });
 }
 
+function displayEmptiness() {
+  if (!todosArray.length) {
+    todos.innerHTML = `<p class="${CLASSES.empty}">해야 할 일을 작성해 보세요! 📝</p>`;
+  }
+}
+
 function renderAllTodos() {
-  const todosHTML = todosArray.map(createTodoHTML).join("");
+  const todosHTML = todosArray.map(createTodoHTML).join(""); // REVIEW: Array 비어 있어도 returns string
   todos.innerHTML = todosHTML;
 
   setEventListenerOnCheckBoxes();
@@ -82,10 +95,15 @@ function onTodoChecked(e) {
   const todo = e.target.parentElement;
   fadeAndRemoveTodo(todo);
   deleteTodo(Number(e.target.id));
+
+  displayEmptiness();
 }
 
 function fadeAndRemoveTodo(todo) {
-  $(todo).fadeOut(700, () => $(todo).remove());
+  $(todo).fadeOut(700, () => {
+    $(todo).remove();
+  });
+  console.log(1);
 }
 
 function deleteTodo(id) {
@@ -93,8 +111,15 @@ function deleteTodo(id) {
   updateTodos(todosArray);
 }
 
+// function sleep(ms) {
+//   const wakeUpTime = Date.now() + ms;
+//   while (Date.now() < wakeUpTime) {}
+// }
+
 // Main
 
 HideAndShowTodosTap();
 renderAllTodos();
+displayEmptiness();
+
 todoForm.addEventListener("submit", onTodoFormSubmit);

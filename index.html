@@ -26,7 +26,10 @@
   <body>
     <header>
       <div class="weather wrapper wrapper--transparent">
-        <span class="weather__location text-shadow"></span>
+        <div class="weather__location-wrapper">
+          <span class="pin">📍</span
+          ><span class="weather__location text-shadow"></span>
+        </div>
         <hr />
         <span class="weather__detail text-stroke"></span>
       </div>
@@ -40,7 +43,7 @@
     </header>
 
     <main>
-      <section id="left"></section>
+      <section id="left"><div class="right__cat-house"></div></section>
 
       <section id="center">
         <div class="center__primary">
@@ -77,27 +80,30 @@
           <div class="todos-wrapper">
             <div class="todosTapBtn-wrapper">
               <button class="btn todosTapBtn">
-                <img src="src/todo.svg" alt="To Do List" />
+                <img src="src/todos.svg" alt="To Do List" />
               </button>
             </div>
             <!-- <i class="fa-solid fa-calendar-check fa-xl"></i> REVIEW -->
 
             <div class="todos-tap-wrapper">
-              <div class="todos-tap">
+              <div class="todos-tap wrapper">
                 <h3 class="todos-tap__title">To Do List</h3>
                 <ul class="todos-tap__todos"></ul>
-                <form class="todos-tap__todo-form">
-                  <input type="text" class="todos-tap__todo-input" required />
+                <form class="todos-tap__form">
+                  <input
+                    type="text"
+                    class="todos-tap__input"
+                    title=""
+                    required
+                  />
                 </form>
               </div>
             </div>
           </div>
         </div>
-
-        <div class="right__cat-house"></div>
       </section>
     </main>
-    <button class="resetBtn">초기화</button>
+    <!-- <button class="resetBtn">초기화</button> -->
     <img src="" alt="Background" class="background" />
   </body>
 </html>
