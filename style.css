@@ -13,11 +13,23 @@ html {
 
 body {
   background-size: cover;
+  background-position: center;
   font-family: "Open Sans";
   font-size: var(--base-font-size);
+  overflow-x: hidden; /* REVIEW */
   height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
 }
 
 header {

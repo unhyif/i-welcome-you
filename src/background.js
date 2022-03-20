@@ -1,8 +1,11 @@
 // Functions
 
 function setBackground() {
-  const url = `https://source.unsplash.com/random/${innerWidth}×${innerHeight}/?${getTerm()}`;
-  document.body.style.backgroundImage = `url(${url})`;
+  const background = document.querySelector(".background");
+  const url = `https://source.unsplash.com/random/${screen.width}×${
+    screen.height
+  }/?${getTerm()}`; // REVIEW
+  background.src = url;
 }
 
 function getTerm() {
@@ -22,12 +25,6 @@ function getTerm() {
   return term;
 }
 
-// 브라우저 작은 창에서 load 후, 큰 창으로 사이즈 조절시 화질 깨질 수 있음
-function onResize() {
-  document.body.style.backgroundSize = `${innerWidth}px ${innerHeight}px`;
-}
-
 // Main
 
 setBackground();
-window.addEventListener("resize", onResize);
