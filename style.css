@@ -118,14 +118,14 @@ header {
   display: none;
 }
 
-.settingBtn {
+.moreBtn {
   position: relative;
   align-self: flex-start;
-  transition: all 0.5s ease-in-out;
+  /* transition: all 0.5s ease-in-out; */
 }
 
-.settingBtn:hover {
-  animation: rotate 2s linear infinite; /* REVIEW */
+/* .moreBtn:hover {
+  animation: rotate 2s linear infinite; REVIEW 
 }
 
 @keyframes rotate {
@@ -135,7 +135,7 @@ header {
   to {
     transform: rotate(1turn);
   }
-}
+} */
 
 /* section left */
 
@@ -214,7 +214,7 @@ header {
   font-size: var(--tempGreeting-fontSize);
   color: var(--white);
   margin-bottom: 4rem;
-  /* padding-left: calc(var(--tempGreeting-fontSize) / 2); */
+  padding-left: calc(var(--tempGreeting-fontSize) / 2);
 }
 
 .hi {
@@ -417,4 +417,41 @@ header {
 
 .todos-tap__input:hover {
   background: rgb(255, 248, 230);
+}
+
+/* Modal */
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+
+  background-color: white;
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 1rem;
+}
+
+.close-modal {
+  align-self: flex-end;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
 }

@@ -39,8 +39,8 @@ function removeEmptiness() {
 
 function createTodoHTML(todo) {
   return `<li class="${CLASSES.todo}">
-  <input type="checkbox" id="${todo.id}" class="${CLASSES.todoCheckBox}" title="클릭하면 삭제됩니다"/>
-  <label for="${todo.id}" class="${CLASSES.todoContent}" title="클릭하면 삭제됩니다">${todo.content}</label>
+  <input type="checkbox" id="${todo.id}" class="${CLASSES.todoCheckBox}" title="클릭하면 삭제됩니다."/>
+  <label for="${todo.id}" class="${CLASSES.todoContent}" title="클릭하면 삭제됩니다.">${todo.content}</label>
   </li>`;
 }
 

@@ -22,7 +22,7 @@
     <script src="//code.jquery.com/jquery-3.3.1.min.js" defer></script>
     <script src="src/todos.js" defer></script>
     <script src="src/cat.js" defer></script>
-    <script src="src/setting.js" defer></script>
+    <!-- <script src="src/more.js" defer></script> -->
   </head>
   <body>
     <header>
@@ -35,14 +35,17 @@
         <span class="weather__detail text-stroke"></span>
       </div>
 
-      <button class="btn settingBtn text-stroke--strong-white">
-        <i class="fa-solid fa-gear fa-xl"></i>
+      <button
+        class="btn moreBtn show-modal text-stroke--strong-white"
+        title="준비 중입니다."
+      >
+        <i class="fa-solid fa-circle-info fa-xl"></i>
       </button>
-      <ul class="setting">
+      <!-- <ul class="setting">
         <li class="setting__item">초기화</li>
         <li class="setting__item">I-welcome-you</li>
         <li class="setting__item">Who developed this?</li>
-      </ul>
+      </ul> -->
     </header>
 
     <main>
@@ -114,7 +117,7 @@
         </div>
       </section>
     </main>
-    <button class="resetBtn">초기화</button>
     <img src="" alt="Background" class="background" />
+    <!-- <button class="resetBtn">초기화 버튼</button> -->
   </body>
 </html>
