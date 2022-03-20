@@ -1,7 +1,6 @@
 @import "css/reset.css";
 @import "css/variables.css";
-/* @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap")/ */
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+KR:wght@400;700;900&display=swap");
 
 .hidden {
   display: none;
@@ -14,8 +13,9 @@ html {
 body {
   background-size: cover;
   background-position: center;
-  font-family: "Open Sans";
+  font-family: "Noto Sans KR";
   font-size: var(--base-fontSize);
+  color: var(--black);
   overflow-x: hidden; /* REVIEW */
   height: 100vh;
   display: flex;
@@ -30,11 +30,7 @@ body {
   width: 100vw;
   height: 100vh;
   object-fit: cover;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
+  filter: brightness(0.9);
 }
 
 main {
@@ -44,6 +40,13 @@ main {
 }
 
 /* header */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--body-side-padding) var(--body-vertical-padding);
+}
 
 .weather {
   display: flex;
@@ -115,6 +118,7 @@ main {
 
 .right__todos {
   flex: 1 0 var(--todosContainer-height);
+  font-family: "Gowun Dodum", sans-serif;
 }
 
 .todos-wrapper {
@@ -128,25 +132,44 @@ main {
   transform: none !important;
 }
 
-.todosTapBtn {
-  display: block;
-  width: max-content;
+.todosTapBtn-wrapper {
+  padding-right: calc(var(--body-side-padding) + 0.1rem);
   position: relative;
   transition: all 1s ease-in-out;
 }
 
-.todosTapBtn.todosTapBtn--hide {
+.todosTapBtn-wrapper.todosTapBtn-wrapper--hide {
   transform: translateX(100%);
+}
+
+.todosTapBtn {
+  padding: var(--btn-padding) var(--btn-padding) 0.4rem var(--btn-padding);
+  background: var(--half-white);
+  border-radius: 50%;
+}
+
+.todosTapBtn img {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.todos-tap-wrapper {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  padding-right: var(--body-side-padding);
 }
 
 .todos-tap {
   width: 100%;
-  position: relative;
-  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgba(255, 255, 255, 0.5);
+  background: var(--white);
+}
+
+.todo-tap__title {
+  font-size: 2rem;
 }
 
 .todo {

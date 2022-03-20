@@ -2,10 +2,19 @@
   /* Size */
   --base-fontSize: 1.6rem;
 
+  --body-vertical-padding: 2rem;
+  --body-side-padding: 1rem;
+  --btn-padding: 1rem;
+
   --username-padding: 2rem;
 
   --todosContainer-height: 70%;
   --catHouseContainer-height: 30%;
+
+  /* Color */
+  --black: #222;
+  --white: rgb(253, 253, 253);
+  --half-white: rgba(255, 255, 255, 0.5);
 
   --black-underline: 0.1rem solid black;
 }

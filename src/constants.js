@@ -7,7 +7,7 @@ const KEYS = {
 const CLASSES = {
   hidden: "hidden",
 
-  todosTapBtnHide: "todosTapBtn--hide",
+  todosTapBtnHide: "todosTapBtn-wrapper--hide",
   showTodosTap: "show-todosTap",
 
   todo: "todo",

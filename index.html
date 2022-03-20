@@ -30,7 +30,7 @@
         ><span class="weather__detail"></span>
       </div>
 
-      <button class="settingBtn"><i class="fa-solid fa-gear"></i></button>
+      <button class="settingBtn"><i class="fa-solid fa-gear fa-xl"></i></button>
       <ul class="setting">
         <li class="setting__item">초기화</li>
         <li class="setting__item">I-welcome-you</li>
@@ -70,16 +70,21 @@
       <section id="right">
         <div class="right__todos">
           <div class="todos-wrapper">
-            <button class="todosTapBtn">
-              <i class="fa-solid fa-calendar-check fa-xl"></i>
-            </button>
+            <div class="todosTapBtn-wrapper">
+              <button class="todosTapBtn">
+                <img src="src/todo.svg" alt="To Do List" />
+              </button>
+            </div>
+            <!-- <i class="fa-solid fa-calendar-check fa-xl"></i> REVIEW -->
 
-            <div class="todos-tap">
-              <h3>To Do List</h3>
-              <ul class="todos"></ul>
-              <form class="todo-form">
-                <input type="text" class="todo-input" required />
-              </form>
+            <div class="todos-tap-wrapper">
+              <div class="todos-tap">
+                <h3 class="todos-tap__title">To Do List</h3>
+                <ul class="todos-tap__todos"></ul>
+                <form class="todos-tap__todo-form">
+                  <input type="text" class="todos-tap__todo-input" required />
+                </form>
+              </div>
             </div>
           </div>
         </div>
@@ -88,6 +93,6 @@
       </section>
     </main>
     <!-- <button class="resetBtn">초기화</button> -->
-    <img src="" alt="background" class="background" />
+    <img src="" alt="Background" class="background" />
   </body>
 </html>

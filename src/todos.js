@@ -3,10 +3,10 @@
 const savedTodos = localStorage.getItem(KEYS.todos);
 let todosArray = savedTodos ? JSON.parse(savedTodos) : [];
 
-const todos = document.querySelector(".todos"); // REVIEW
+const todos = document.querySelector(".todos-tap__todos"); // REVIEW
 let todoCheckBoxes; // REVIEW
-const todoForm = document.querySelector(".todo-form");
-const todoInput = document.querySelector(".todo-input");
+const todoForm = document.querySelector(".todos-tap__todo-form");
+const todoInput = document.querySelector(".todos-tap__todo-input");
 
 // Functions
 
@@ -39,23 +39,26 @@ function createTodoHTML(todo) {
 
 function HideAndShowTodosTap() {
   const todosWrapper = document.querySelector(".todos-wrapper");
-  const todosTap = document.querySelector(".todos-tap");
+  // const todosWrapperWidth = parseInt(getComputedStyle(todosWrapper)["width"]);
+  const todosTap = document.querySelector(".todos-tap-wrapper");
   const todosTapWidth = parseInt(getComputedStyle(todosTap)["width"]);
+  const todosTapBtn = document.querySelector(".todosTapBtn-wrapper");
+  // console.log(
+  //   parseInt(getComputedStyle(todosWrapper)["width"]),
+  //   parseInt(getComputedStyle(todosTapBtn)["width"]),
+  //   todosTapWidth
+  // );
 
-  const todosTapBtn = document.querySelector(".todosTapBtn");
-  console.log(
-    parseInt(getComputedStyle(todosWrapper)["width"]),
-    parseInt(getComputedStyle(todosTapBtn)["width"]),
-    todosTapWidth
-  );
-
-  todosWrapper.style.transform = `translateX(${todosTapWidth}px)`;
+  todosWrapper.style.transform = `translateX(${todosTapWidth + 1}px)`;
 
   todosTapBtn.addEventListener("mouseenter", () => {
+    // todosTapBtn.style.transform = `translateX(${todosWrapperWidth}px)`;
     todosTapBtn.classList.add(CLASSES.todosTapBtnHide);
     todosWrapper.classList.add(CLASSES.showTodosTap); // REVIEW
   });
+
   todosTap.addEventListener("mouseleave", () => {
+    // todosTapBtn.style.transform = "none";
     todosTapBtn.classList.remove(CLASSES.todosTapBtnHide);
     todosWrapper.classList.remove(CLASSES.showTodosTap);
   });
@@ -82,7 +85,7 @@ function onTodoChecked(e) {
 }
 
 function fadeAndRemoveTodo(todo) {
-  $(todo).fadeOut(800, () => $(todo).remove());
+  $(todo).fadeOut(700, () => $(todo).remove());
 }
 
 function deleteTodo(id) {
