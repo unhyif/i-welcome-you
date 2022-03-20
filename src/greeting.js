@@ -1,8 +1,9 @@
-"use strict";
+// Variables
 
 const usernameForm = document.querySelector(".username-form"); // REVIEW: Scope
 const usernameInput = document.querySelector(".username");
 
+// Functions
 // Username related functions
 
 /**

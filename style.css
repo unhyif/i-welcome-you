@@ -65,7 +65,6 @@ main {
 }
 
 .username {
-  text-align: center;
   padding: 0 0 0.1rem 0;
 }
 
@@ -100,10 +99,39 @@ main {
   flex-direction: column;
 }
 
-.todos-wrapper {
+/* todos */
+
+.right__todos {
   flex: 1 0 var(--todos-wrapper-height);
 }
 
-.dog-house-wrapper {
-  flex: 1 0 var(--dog-house-wrapper-height);
+.todos-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.todos-tap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.todosTapBtn {
+  /* display: none; */
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+}
+
+.todo__checkbox:checked + label {
+  text-decoration-line: line-through;
+  /* text-decoration-color: gray; */
+}
+
+/* cat-house */
+
+.right__cat-house {
+  flex: 1 0 var(--cat-house-wrapper-height);
 }

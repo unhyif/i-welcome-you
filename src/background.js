@@ -10,7 +10,7 @@ function getTerm() {
   const hour = new Date().getHours();
 
   if (5 <= hour && hour < 12) {
-    term = "morning,fresh";
+    term = "morning,sunrise";
   } else if (12 <= hour && hour < 18) {
     term = "afternoon,happy";
   } else if (18 <= hour && hour < 21) {

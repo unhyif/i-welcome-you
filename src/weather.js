@@ -1,4 +1,4 @@
-// Function
+// Functions
 
 function onGeoResponse(location) {
   ({ latitude: lat, longitude: lon } = location.coords); // REVIEW

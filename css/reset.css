@@ -144,9 +144,10 @@ a {
 input {
   font: inherit;
   border: none;
-  -webkit-appearance: none; /* Safari and Chrome */
-  -moz-appearance: none; /* Firefox */
-  appearance: none;
+  text-align: center;
+  /* -webkit-appearance: none; Safari and Chrome
+  -moz-appearance: none; Firefox
+  appearance: none; */
 }
 
 /* input[type="text" i] {
