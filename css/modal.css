@@ -1,0 +1,93 @@
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 80%;
+  overflow-y: scroll;
+
+  background-color: white;
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+  z-index: 10;
+}
+
+.close-modal {
+  align-self: flex-end;
+  font-size: 3.5rem;
+  font-weight: bold;
+  transition: all 0.1s ease-in-out;
+}
+
+.close-modal:hover {
+  color: var(--light-gray);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(0.5rem);
+  z-index: 5;
+}
+
+.modal__title {
+  font-size: 7rem;
+  font-weight: 700;
+}
+
+.modal hr {
+  /* REVIEW  */
+  width: 100%;
+  margin-top: 3.5rem;
+  background: var(--weak-gray);
+  border: none;
+  border-bottom: 0.3rem solid var(--weak-gray);
+}
+
+.modal__intro {
+  font-size: 3rem;
+  margin: 2rem 0 4rem 0;
+}
+
+.modal__feature {
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.feature-desc {
+  margin: 1rem 0 2rem 0;
+}
+
+.feature-desc {
+  text-align: center;
+  line-height: 2.5rem;
+}
+
+.modal__reset {
+  font-weight: 700;
+  margin-top: 2.5rem;
+}
+
+.resetBtn {
+  font-size: 4rem;
+  margin: 2rem 0 4rem 0;
+  transition: all 0.1s ease-in-out;
+}
+
+.resetBtn:hover {
+  color: crimson;
+}
+
+.copyright {
+  text-align: center;
+  font-size: var(--base-fontSize);
+  line-height: 2.1rem;
+}

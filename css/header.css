@@ -1,0 +1,69 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--body-padding);
+}
+
+/* Weather */
+
+.weather {
+  background: var(--half-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: var(--white);
+  font-weight: 700;
+}
+
+.weather__location-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pin {
+  font-size: 2rem;
+}
+
+.weather__location {
+  font-size: 2.5rem;
+}
+
+.weather hr {
+  width: 100%;
+  height: 0.2rem;
+  background: var(--white);
+  border: none;
+}
+
+/* More */
+
+.moreBtn {
+  align-self: flex-start;
+  transition: all 0.2s ease-in-out;
+  font-size: 2rem;
+}
+
+.moreBtn:hover {
+  transform: scale(1.15);
+}
+
+/* .moreBtn:hover {
+    animation: rotate 2s linear infinite; REVIEW 
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(1turn);
+    }
+  } */
+
+/* .setting {
+  position: relative;
+  display: none;
+} */

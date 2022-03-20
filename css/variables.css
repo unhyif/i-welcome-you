@@ -1,11 +1,8 @@
 :root {
-  /* Length */
-  /* --catHouseContainer-height: 30%; */
-
   /* Font size */
   --base-fontSize: 1.6rem;
   --tempGreeting-fontSize: 12rem;
-  --username-fontSize: 5rem;
+  --greeting-fontSize: 5rem;
   --clock-fontSize: 10rem;
 
   /* Color */

@@ -26,11 +26,11 @@
     <script src="//code.jquery.com/jquery-3.3.1.min.js" defer></script>
     <script src="src/todos.js" defer></script>
     <script src="src/cat.js" defer></script>
-    <!-- <script src="src/more.js" defer></script> -->
+    <script src="src/more.js" defer></script>
   </head>
   <body>
     <header>
-      <div class="weather wrapper wrapper--transparent">
+      <div class="weather wrapper">
         <div class="weather__location-wrapper">
           <span class="pin">📍</span
           ><span class="weather__location text-shadow"></span>
@@ -40,14 +40,14 @@
       </div>
 
       <button
-        class="btn moreBtn show-modal text-stroke--strong-white"
-        title="준비 중입니다."
+        class="btn moreBtn text-stroke--strong-white show-modal"
+        title="Welcome!"
       >
         <i class="fa-solid fa-circle-info fa-xl"></i>
       </button>
       <!-- <ul class="setting">
         <li class="setting__item">초기화</li>
-        <li class="setting__item">I-welcome-you</li>
+        <li class="setting__item">I welcome you</li>
         <li class="setting__item">Who developed this?</li>
       </ul> -->
     </header>
@@ -81,7 +81,7 @@
                 required
               />
             </form>
-            <p class="greeting hidden text-stroke--bold"></p>
+            <p class="greeting text-stroke--bold hidden"></p>
           </h1>
 
           <h2 class="primary__clock-wrapper">
@@ -101,12 +101,12 @@
                 <img src="src/todos.svg" alt="To Do List" />
               </button>
             </div>
-            <!-- <i class="fa-solid fa-calendar-check fa-xl"></i> REVIEW -->
 
             <div class="todos-tap-wrapper">
               <div class="todos-tap wrapper">
                 <h3 class="todos-tap__title">To Do List</h3>
                 <ul class="todos-tap__todos"></ul>
+
                 <form class="todos-tap__form">
                   <input
                     type="text"
@@ -122,6 +122,46 @@
       </section>
     </main>
     <img src="" alt="Background" class="background" />
-    <!-- <button class="resetBtn">초기화 버튼</button> -->
+
+    <div class="modal hidden">
+      <button class="close-modal" title="닫기">&times;</button>
+
+      <h1 class="modal__title">I welcome you 🙌</h1>
+      <hr />
+      <p class="modal__intro">재미있는 기능을 소개해 드릴게요! 😎</p>
+
+      <h2 class="modal__feature">① 시간에 따라 달라지는 배경 & 인삿말</h2>
+      <p class="feature-desc">
+        배경 컨셉이 아침/낮/저녁/밤마다 다르게 설정돼요.
+        <br />
+        인삿말은 오전 5시와 오후 18시를 기점으로 달라집니다. 🌞🌛
+      </p>
+
+      <h2 class="modal__feature">② 랜덤 인삿말</h2>
+      <p class="feature-desc">
+        약 10%의 확률로 건강을 챙겨주는 문구가 로딩돼요.<br />이미 보셨다면
+        당신은 행운아! 🍀
+      </p>
+
+      <h2 class="modal__feature">③ 할 일 추천</h2>
+      <p class="feature-desc">
+        심심할 땐 고양이에게 뭘 하면 좋을지 물어 보세요.<br />뿌듯한 하루가 될
+        거예요 😽
+      </p>
+
+      <p class="modal__reset">
+        데이터 초기화를 원하시면 아래 버튼을 클릭하세요.
+      </p>
+      <button class="resetBtn" title="초기화">
+        <i class="fa-solid fa-trash"></i>
+      </button>
+
+      <p class="copyright">
+        To Do by Hare Krishna from NounProject.com
+        <br />
+        Cat by supalerk laipawat from NounProject.com
+      </p>
+    </div>
+    <div class="overlay hidden"></div>
   </body>
 </html>

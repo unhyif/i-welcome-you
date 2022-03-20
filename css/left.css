@@ -1,0 +1,50 @@
+#left {
+  display: flex;
+  align-items: flex-end;
+  padding-left: var(--body-padding);
+  padding-bottom: var(--body-padding);
+}
+
+/* cat */
+
+.cat-house-wrapper {
+  position: relative;
+}
+
+.cat-house {
+  padding: 2.5rem 1rem 0 1rem;
+  background: rgba(255, 250, 205, 0.9);
+  border-radius: 5rem;
+}
+
+.question {
+  text-align: center;
+  font-family: "Gowun Dodum", sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.cat {
+  width: 20rem;
+  height: 20rem;
+}
+
+.meow {
+  position: absolute;
+  width: 30rem;
+  bottom: 15rem;
+  right: -27rem;
+  transform: rotate(10deg);
+  font-family: "Kalam", cursive;
+  font-size: 2.5rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem 2.5rem 1.5rem 2.5rem;
+  border-radius: 10rem;
+  border-bottom-left-radius: 0;
+  display: none;
+}
+
+.cat-house-wrapper:hover > .meow {
+  display: block;
+}

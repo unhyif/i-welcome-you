@@ -1,0 +1,117 @@
+#right {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Todos */
+
+.right__todos {
+  display: flex;
+  align-items: center;
+}
+
+.todos-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  transition: all var(--todosTapTime) ease-in-out;
+}
+
+.todos-wrapper.show-todosTap {
+  transform: none !important;
+}
+
+.todosTapBtn-wrapper {
+  padding-right: calc(var(--body-padding) + 0.1rem);
+  position: relative;
+  transition: all var(--todosTapTime) ease-in-out;
+}
+
+.todosTapBtn-wrapper.todosTapBtn-wrapper--hide {
+  transform: translateX(150%);
+}
+
+.todosTapBtn {
+  padding: 1.5rem 1.4rem 0.7rem 1.25rem;
+  background: var(--half-bright-white);
+}
+
+.todosTapBtn img {
+  width: 4rem;
+  height: 4rem;
+}
+
+.todos-tap-wrapper {
+  width: 90%;
+  position: relative;
+  z-index: 2;
+  padding-right: var(--body-padding);
+}
+
+.todos-tap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--todosTap-gap);
+  background: var(--white);
+  padding-left: var(--todosTap-gap);
+  padding-right: var(--todosTap-gap);
+}
+
+.todos-tap__title {
+  font-size: 3rem;
+  font-weight: bold;
+  width: 90%;
+  text-align: center;
+  padding-bottom: var(--todosTap-gap);
+  border-bottom: 0.25rem solid var(--weak-gray);
+}
+
+.todos-tap__todos {
+  width: 32rem;
+  height: 35rem;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  /* gap: 1rem; */
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.empty {
+  width: 100%;
+  text-align: center;
+  padding-top: calc(35rem / 2);
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  line-height: 2.5rem;
+  padding: calc(var(--todosTap-gap) / 2) var(--todosTap-gap);
+}
+
+.todo:hover {
+  background: rgb(255, 240, 200);
+}
+
+/* .todo__checkbox {
+    font-size: 5rem;
+  } */
+
+.todo__checkbox:checked + label {
+  text-decoration-line: line-through;
+}
+
+.todos-tap__input {
+  font-size: 2rem;
+  border: 0.2rem solid var(--weak-gray);
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+}
+
+.todos-tap__input:hover {
+  background: rgb(255, 248, 230);
+}

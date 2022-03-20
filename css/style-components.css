@@ -1,0 +1,31 @@
+.wrapper {
+  padding: var(--wrapper-padding);
+  border-radius: 1rem;
+}
+
+.btn {
+  padding: var(--btn-padding);
+  border-radius: 50%;
+}
+
+/* Text */
+
+.text-shadow {
+  text-shadow: 0 0 0.2rem var(--dark-gray), 0.2rem 0.2rem 0 var(--dark-gray);
+}
+
+.text-stroke {
+  text-shadow: 0 0 0.2rem black;
+}
+
+.text-stroke--bold {
+  text-shadow: 0 0 0.5rem black;
+}
+
+.text-stroke--bold-white {
+  text-shadow: 0 0 0.5rem white;
+}
+
+.text-stroke--strong-white {
+  text-shadow: 0 0 0.8rem white;
+}
