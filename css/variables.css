@@ -1,10 +1,11 @@
 :root {
   /* Size */
-  --base-font-size: 1.6rem;
+  --base-fontSize: 1.6rem;
+
   --username-padding: 2rem;
 
-  --todos-wrapper-height: 70%;
-  --cat-house-wrapper-height: 30%;
+  --todosContainer-height: 70%;
+  --catHouseContainer-height: 30%;
 
   --black-underline: 0.1rem solid black;
 }

@@ -6,6 +6,10 @@ const KEYS = {
 
 const CLASSES = {
   hidden: "hidden",
+
+  todosTapBtnHide: "todosTapBtn--hide",
+  showTodosTap: "show-todosTap",
+
   todo: "todo",
   todoCheckBox: "todo__checkbox",
   todoContent: "todo__content",

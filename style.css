@@ -15,7 +15,7 @@ body {
   background-size: cover;
   background-position: center;
   font-family: "Open Sans";
-  font-size: var(--base-font-size);
+  font-size: var(--base-fontSize);
   overflow-x: hidden; /* REVIEW */
   height: 100vh;
   display: flex;
@@ -114,22 +114,39 @@ main {
 /* todos */
 
 .right__todos {
-  flex: 1 0 var(--todos-wrapper-height);
+  flex: 1 0 var(--todosContainer-height);
 }
 
 .todos-wrapper {
+  position: relative;
   display: flex;
   align-items: center;
+  transition: all 1s ease-in-out;
 }
 
-.todos-tap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.todos-wrapper.show-todosTap {
+  transform: none !important;
 }
 
 .todosTapBtn {
-  /* display: none; */
+  display: block;
+  width: max-content;
+  position: relative;
+  transition: all 1s ease-in-out;
+}
+
+.todosTapBtn.todosTapBtn--hide {
+  transform: translateX(100%);
+}
+
+.todos-tap {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .todo {
@@ -145,5 +162,5 @@ main {
 /* cat-house */
 
 .right__cat-house {
-  flex: 1 0 var(--cat-house-wrapper-height);
+  flex: 1 0 var(--catHouseContainer-height);
 }
