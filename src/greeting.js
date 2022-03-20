@@ -91,9 +91,7 @@ function displayGreeting() {
  * Hide temporary greeting which was displayed to guests.
  */
 function hideTempGreeting() {
-  document
-    .querySelector(".primary__temp-greeting")
-    .classList.add(CLASSES.hidden);
+  document.querySelector(".primary__temp-greeting").remove();
 }
 
 /**

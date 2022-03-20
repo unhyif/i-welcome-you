@@ -1,20 +1,33 @@
 :root {
-  /* Size */
-  --base-fontSize: 1.6rem;
-
-  --body-vertical-padding: 2rem;
-  --body-side-padding: 1rem;
-  --btn-padding: 1rem;
-
-  --username-padding: 2rem;
-
+  /* Length */
   --todosContainer-height: 70%;
   --catHouseContainer-height: 30%;
+
+  /* Font size */
+  --base-fontSize: 1.6rem;
+  --tempGreeting-fontSize: 12rem;
+  --username-fontSize: 5rem;
+  --clock-fontSize: 10rem;
 
   /* Color */
   --black: #222;
   --white: rgb(253, 253, 253);
   --half-white: rgba(255, 255, 255, 0.5);
+  --half-bright-white: rgba(255, 255, 255, 0.8);
+  --dark-gray: rgb(80, 80, 80);
+  --light-gray: rgb(160, 160, 160);
 
-  --black-underline: 0.1rem solid black;
+  /* Padding */
+  --body-padding: 2rem;
+  --wrapper-padding: 1.5rem;
+  --btn-padding: 1rem;
+  --username-padding: 2rem;
+
+  /* Time */
+  --todosTapTime: 0.7s;
+
+  /* Underline */
+  --black-underline: 0.1rem solid var(--black);
+  --white-underline: 0.1rem solid var(--white);
+  --gray-underline: 0.1rem solid var(--light-gray);
 }

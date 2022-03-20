@@ -21,13 +21,14 @@
     <script src="src/weather.js" defer></script>
     <script src="//code.jquery.com/jquery-3.3.1.min.js" defer></script>
     <script src="src/todos.js" defer></script>
-    <!-- <script src="src/setting.js" defer></script> -->
+    <script src="src/setting.js" defer></script>
   </head>
   <body>
     <header>
-      <div class="weather">
-        <span class="weather__location"></span
-        ><span class="weather__detail"></span>
+      <div class="weather wrapper wrapper--transparent">
+        <span class="weather__location text-shadow"></span>
+        <hr />
+        <span class="weather__detail text-stroke"></span>
       </div>
 
       <button class="settingBtn"><i class="fa-solid fa-gear fa-xl"></i></button>
@@ -43,24 +44,28 @@
 
       <section id="center">
         <div class="center__primary">
-          <p class="primary__temp-greeting">안녕하세요</p>
+          <p class="primary__temp-greeting">
+            <span class="text-shadow">안녕하세요</span
+            ><span class="hi">👋</span>
+          </p>
 
           <h1 class="primary__greeting-wrapper">
             <form class="username-form">
               <input
                 type="text"
-                class="username"
+                class="username text-stroke--bold"
                 placeholder="이름 입력 후 Enter!"
                 title=""
+                maxlength="10"
                 required
               />
             </form>
-            <p class="greeting hidden"></p>
+            <p class="greeting hidden text-stroke--bold"></p>
           </h1>
 
           <h2 class="primary__clock-wrapper">
-            <span class="clock"></span
-            ><button class="timeConvertBtn">
+            <span class="clock text-shadow"></span
+            ><button class="btn timeConvertBtn text-stroke--bold-white">
               <i class="fa-solid fa-clock-rotate-left"></i>
             </button>
           </h2>
@@ -71,7 +76,7 @@
         <div class="right__todos">
           <div class="todos-wrapper">
             <div class="todosTapBtn-wrapper">
-              <button class="todosTapBtn">
+              <button class="btn todosTapBtn">
                 <img src="src/todo.svg" alt="To Do List" />
               </button>
             </div>
@@ -92,7 +97,7 @@
         <div class="right__cat-house"></div>
       </section>
     </main>
-    <!-- <button class="resetBtn">초기화</button> -->
+    <button class="resetBtn">초기화</button>
     <img src="" alt="Background" class="background" />
   </body>
 </html>
