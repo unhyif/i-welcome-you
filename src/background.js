@@ -21,7 +21,6 @@ function getTerm() {
   } else {
     term = "night";
   }
-  term = "happy";
 
   return term;
 }
