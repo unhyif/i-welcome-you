@@ -38,7 +38,7 @@ body {
 
 main {
   display: grid;
-  grid-template-columns: 2fr 5fr 2fr;
+  grid-template-columns: 2fr 7fr;
   flex-grow: 1; /* section's height also grows like align-items: stretch */
 }
 

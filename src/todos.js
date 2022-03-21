@@ -33,14 +33,14 @@ function renderNewTodo(newTodo) {
 }
 
 function removeEmptiness() {
-  const empty = todos.querySelector(`.${CLASSES.empty}`);
+  const empty = todos.querySelector(`.empty-wrapper`);
   if (empty) empty.remove();
 }
 
 function createTodoHTML(todo) {
   return `<li class="${CLASSES.todo}">
-  <input type="checkbox" id="${todo.id}" class="${CLASSES.todoCheckBox}" title="클릭하면 삭제됩니다."/>
-  <label for="${todo.id}" class="${CLASSES.todoContent}" title="클릭하면 삭제됩니다.">${todo.content}</label>
+  <input type="checkbox" id="${todo.id}" class="${CLASSES.todoCheckBox}" title="클릭 시 삭제됩니다."/>
+  <label for="${todo.id}" class="${CLASSES.todoContent}" title="클릭 시 삭제됩니다.">${todo.content}</label>
   </li>`;
 }
 
@@ -73,7 +73,7 @@ function HideAndShowTodosTap() {
 
 function displayEmptiness() {
   if (!todosArray.length) {
-    todos.innerHTML = `<p class="${CLASSES.empty}">해야 할 일을 작성해 보세요! 📝</p>`;
+    todos.innerHTML = `<div class="empty-wrapper"}><p class="empty">해야 할 일을 작성해 보세요! 📝</p></div>`;
   }
 }
 

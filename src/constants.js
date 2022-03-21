@@ -13,5 +13,4 @@ const CLASSES = {
   todo: "todo",
   todoCheckBox: "todo__checkbox",
   todoContent: "todo__content",
-  empty: "empty",
 };
