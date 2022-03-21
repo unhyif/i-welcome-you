@@ -103,7 +103,6 @@ function fadeAndRemoveTodo(todo) {
   $(todo).fadeOut(600, () => {
     $(todo).remove();
   });
-  console.log(1);
 }
 
 function deleteTodo(id) {

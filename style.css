@@ -19,6 +19,7 @@ body {
   font-size: var(--base-fontSize);
   color: var(--black);
   overflow-x: hidden; /* REVIEW */
+  width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;

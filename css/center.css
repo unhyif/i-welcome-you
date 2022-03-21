@@ -74,8 +74,6 @@
 
 .primary__clock-wrapper {
   position: relative;
-  width: 100%;
-  text-align: center;
 }
 
 .clock {
@@ -86,8 +84,8 @@
 
 .timeConvertBtn {
   position: absolute; /* REVIEW */
-  /* top: -0.5rem; */
-  right: 18rem;
+  right: 0rem;
+  transform: translateX(120%);
   color: var(--dark-gray);
   background: var(--half-bright-white);
   transition: opacity 0.5s, background 0.2s; /* REVIEW */
