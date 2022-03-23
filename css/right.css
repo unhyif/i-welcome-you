@@ -103,7 +103,12 @@
   text-decoration-line: line-through;
 }
 
+.todos-tap__form {
+  width: 100%;
+}
+
 .todos-tap__input {
+  width: 100%;
   font-size: 2rem;
   border: 0.2rem solid var(--weak-gray);
   border-radius: 1rem;

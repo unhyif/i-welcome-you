@@ -117,7 +117,7 @@ function deleteTodo(id) {
 
 // Main
 
-HideAndShowTodosTap();
+// HideAndShowTodosTap();
 renderAllTodos();
 displayEmptiness();
 
